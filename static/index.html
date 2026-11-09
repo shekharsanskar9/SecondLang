@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecondLang — refine your English</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">S</span>
+      <div>
+        <h1>SecondLang</h1>
+        <p>Write it right, for the office or for home.</p>
+      </div>
+    </div>
+    <span id="provider" class="pill" title="Engine refining your text">connecting…</span>
+  </header>
+
+  <main class="layout">
+    <section class="panel compose" aria-label="Write">
+      <div class="tone-switch" role="radiogroup" aria-label="Tone">
+        <button type="button" class="tone" data-tone="formal" role="radio">
+          <strong>Formal</strong><small>Teachers, office, HR</small>
+        </button>
+        <button type="button" class="tone" data-tone="family" role="radio">
+          <strong>Family</strong><small>Parents, siblings, relatives</small>
+        </button>
+      </div>
+
+      <label for="context">Who is it for? <span class="muted">(optional)</span></label>
+      <input id="context" type="text" maxlength="300"
+             placeholder="e.g. email to my professor asking for a deadline extension">
+
+      <label for="input">Your text</label>
+      <textarea id="input" rows="10" maxlength="5000"
+                placeholder="Type or paste your message. Mixed Hindi words are fine, they'll be translated."></textarea>
+
+      <div class="compose-foot">
+        <span id="count" class="muted">0 / 5000</span>
+        <button id="refine" type="button" class="primary">Refine <kbd>Ctrl ↵</kbd></button>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section class="panel result" aria-label="Result" aria-live="polite">
+      <div id="empty" class="empty">
+        <p class="empty-title">Your corrected text appears here</p>
+        <p class="muted">Pick a tone, write your message and press <b>Refine</b>. You'll see what changed and why.</p>
+      </div>
+
+      <div id="output" hidden>
+        <div class="result-head">
+          <h2>Refined <span id="tone-badge" class="badge"></span></h2>
+          <button id="copy" type="button" class="ghost">Copy</button>
+        </div>
+        <p id="refined" class="refined"></p>
+
+        <details open>
+          <summary>What changed</summary>
+          <p id="diff" class="diff"></p>
+        </details>
+
+        <h3>Corrections <span id="ccount" class="muted"></span></h3>
+        <ul id="corrections" class="corrections"></ul>
+
+        <div id="tip" class="tip" hidden></div>
+      </div>
+    </section>
+
+    <aside class="panel side" aria-label="Progress">
+      <h2>Your common mistakes</h2>
+      <div id="stats" class="stats"><p class="muted">No data yet.</p></div>
+
+      <div class="side-head">
+        <h2>History</h2>
+        <button id="clear" type="button" class="ghost small">Clear all</button>
+      </div>
+      <ul id="history" class="history"></ul>
+    </aside>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
