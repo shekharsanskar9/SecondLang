@@ -183,6 +183,5 @@ History is stored only in a local SQLite file on your machine. With `ollama` or 
 **Sanskar Shekhar**, B.Tech CSE, BIT Mesra
 [GitHub](https://github.com/shekharsanskar9) · [LinkedIn](https://linkedin.com/in/sanskar-shekhar)
 
-## License
 
-MIT. See [LICENSE](LICENSE). <!-- TODO: add a LICENSE file -->
+
